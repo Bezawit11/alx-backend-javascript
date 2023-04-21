@@ -9,10 +9,10 @@ export default class Building {
   }
 
   set sqft(newSqft) {
-    this._sqft = newSqft
+    this._sqft = newSqft;
   }
 
   get sqft() {
-    return this._sqft
+    return this._sqft;
   }
 }
