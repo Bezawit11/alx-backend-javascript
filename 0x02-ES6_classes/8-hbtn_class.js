@@ -13,6 +13,6 @@ export default class HolbertonClass {
       default:
         break;
     }
-  return `invalid`;
+    return 'invalid';
   }
 }
