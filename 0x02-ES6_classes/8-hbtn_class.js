@@ -3,7 +3,8 @@ export default class HolbertonClass {
     this._size = size;
     this._location = location;
   }
-  [Symbol.toPrimitive] (hint){
+
+  [Symbol.toPrimitive](hint) {
     switch (hint) {
       case 'string':
         return this._location;
@@ -12,5 +13,6 @@ export default class HolbertonClass {
       default:
         break;
     }
+  return `invalid`;
   }
 }
