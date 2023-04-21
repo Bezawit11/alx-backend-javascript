@@ -3,8 +3,8 @@ export default class Car {
     this._brand = brand;
     this._motor = motor;
     this._color = color;
-}
- cloneCar() {
-   return Object.create(this)
-}
+  }
+  cloneCar() {
+    return Object.create(this);
+  }
 }
