@@ -5,6 +5,6 @@ export default class Car {
     this._color = color;
 }
  cloneCar() {
-   return Object.create(this())
+   return Object.create(this)
 }
 }
