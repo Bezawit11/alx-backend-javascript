@@ -5,7 +5,7 @@ export default function iterateThroughObject(reportWithIterator) {
     if (index === arr - 1) {
       s += ''.concat(reportWithIterator[index]);
     } else {
-      s += ''.concat(reportWithIterator[index], '|');
+      s += ''.concat(reportWithIterator[index], ' | ');
     }
   }
   return s;
