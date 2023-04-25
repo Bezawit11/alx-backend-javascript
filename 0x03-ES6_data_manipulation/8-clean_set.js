@@ -1,7 +1,7 @@
 export default function cleanSet(s, start) {
   let k = '';
   if (start === '') {
-    return '';
+    return '\n';
   }
   for (let i of s) {
     if (i.startsWith(start) === true) {
