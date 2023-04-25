@@ -3,10 +3,10 @@ export default function cleanSet(s, start) {
   if (start === '') {
     return '\n';
   }
-  for (let i of s) {
+  for (const i of s) {
     if (i.startsWith(start) === true) {
       k += ''.concat(i.replace(start, ''), '-');
     }
   }
-  return k.substring(0, k.length-1);;
+  return k.substring(0, k.length - 1);
 }
