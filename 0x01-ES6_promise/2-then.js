@@ -3,7 +3,7 @@ export default function handleResponseFromAPI(promise) {
     .then(() => { // eslint-disable-line arrow-body-style
       return ({ status: 200, body: 'success' });
     })
-    .catch(() => {
+    .catch(() => { // eslint-disable-line arrow-body-style
       return new Error(); // eslint-disable-line arrow-body-style
     })
     .finally(() => { console.log('Got a response from the API'); // eslint-disable-line brace-style
