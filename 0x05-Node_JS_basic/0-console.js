@@ -1,5 +1,3 @@
-var http = require('http');
-
-http.displayMessage(function (req, res) {
-  res.end('Hello World!');
-}).listen(8080);
+function displayMessage() {
+  console.log('Hello NodeJS!');
+}
