@@ -1,3 +1,3 @@
-function displayMessage() {
+export function displayMessage() {
   console.log('Hello NodeJS!');
 }
