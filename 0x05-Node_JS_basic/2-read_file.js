@@ -9,7 +9,7 @@ const countStudents = (path) => {
   s.shift()
   s.pop()
   s = s.reverse()
-  console.log('Number of students: ', s.length);
+  console.log('Number of students:', s.length);
   var dict = {};
   for (let i = 1; i <= s.length; i++) {
     let g = s[s.length - i].split(',');
