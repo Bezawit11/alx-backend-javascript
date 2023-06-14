@@ -7,6 +7,8 @@ const countStudents = (path) => {
   const data =  fs.readFileSync(path, 'utf-8');
   console.log('data', data);
   let s = data.split('\n');
+  s.shift()
+  s.pop()
   console.log('Number of students: ', s.length - 2);
   var dict = {};
   for (let i = 1; i <= s.length; i++) {
