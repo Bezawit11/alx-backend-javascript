@@ -3,8 +3,8 @@
  */
 const fs = require('fs');
 const countStudents = (path) => {
-  try {
-  const data =  fs.readFile(path, 'utf-8');
+  fs.readFile(path, 'utf-8', (err, data) => {
+    fs.readFile(path, 'utf-8');
   let s = data.split('\n');
   s.shift()
   s.pop()
@@ -27,8 +27,5 @@ const countStudents = (path) => {
   for(var key in dict) {
    console.log('Number of students in ' + key + ": " + dict[key].length + '.' + ' List:' + dict[key]);
 }
-  } catch (err) {
-  throw new Error('Cannot load the database');
-  }
-};
+});
 module.exports = countStudents;
