@@ -9,7 +9,7 @@ const countStudents = (path) => {
   let s = data.split('\n');
   s.shift()
   s.pop()
-  console.log('Number of students: ', s.length - 2);
+  console.log('Number of students: ', s.length);
   var dict = {};
   for (let i = 1; i <= s.length; i++) {
     let g = s[s.length - i].split(',');
@@ -21,7 +21,7 @@ const countStudents = (path) => {
     }
   }
   for(var key in dict) {
-   console.log(key + " : " + dict[key]);
+   console.log('Number of students in ' + key + ": " + dict[key] + '.');
 }
   } catch (err) {
   throw new Error('Cannot load the database');
