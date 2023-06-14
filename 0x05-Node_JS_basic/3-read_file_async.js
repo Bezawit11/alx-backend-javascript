@@ -4,7 +4,7 @@
 const fs = require('fs');
 const countStudents = (path) => {
   try {
-  const data =  fs.readFileSync(path, 'utf-8');
+  const data =  fs.readFile(path, 'utf-8');
   let s = data.split('\n');
   s.shift()
   s.pop()
