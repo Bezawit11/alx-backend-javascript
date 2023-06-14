@@ -7,7 +7,7 @@ const countStudents = (path) => new Promise((resolve, reject) => {
   if (err) {
     reject(new Error('Cannot load the database'));
   }
-  let s = data.split('\n');
+  let s = data.toString('utf-8').split('\n');
   s.shift()
   s.pop()
   s = s.reverse()
