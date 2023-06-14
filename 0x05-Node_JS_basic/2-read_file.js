@@ -18,6 +18,9 @@ const countStudents = (path) => {
       dict[g[g.length - 1]] = dict[g[g.length - 1]] + 1;
     }
   }
+  for(var key in dict) {
+   console.log(key + " : " + dict[key]);
+}
   } catch (err) {
   throw new Error('Cannot load the database');
   }
