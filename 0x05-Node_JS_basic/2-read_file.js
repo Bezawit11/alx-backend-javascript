@@ -9,15 +9,20 @@ const countStudents = (path) => {
   let s = data.split('\n');
   s.shift()
   s.pop()
+  s = s.reverse()
   console.log('Number of students: ', s.length);
   var dict = {};
   for (let i = 1; i <= s.length; i++) {
     let g = s[s.length - i].split(',');
+    var m = g[0];
     if (dict[g[g.length - 1]] === undefined) {
-      dict[g[g.length - 1]] = 1;
+      var k = [m]
+      dict[g[g.length - 1]] = k;
     }
     else {
-      dict[g[g.length - 1]] = dict[g[g.length - 1]] + 1;
+      var l = dict[g[g.length - 1]];
+      l.push(m)
+      dict[g[g.length - 1]] = l;
     }
   }
   for(var key in dict) {
