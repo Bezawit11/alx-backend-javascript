@@ -10,7 +10,7 @@ const countStudents = (path) => {
   console.log('Number of students: ', s.length - 2);
   var dict = {};
   for (let i = 1; i <= s.length; i++) {
-    let g = s.split(',');
+    let g = s[s.length - i].split(',');
     if (dict[g[g.length - 1]] === undefined) {
       dict[g[g.length - 1]] = 1;
     }
