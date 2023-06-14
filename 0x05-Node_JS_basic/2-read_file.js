@@ -2,9 +2,10 @@
  * displays message on the STDOUT.
  */
 var fs = require('fs');
-const countStudents = (path) => {
+var path = process.cwd();
+const countStudents = (rpath) => {
   try {
-  fs.readFileSync(path, function(err, data) {
+  fs.readFileSync(path + rpath, function(err, data) {
   console.log(data);
   });
   } catch (err) {
