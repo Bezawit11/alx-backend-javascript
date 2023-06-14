@@ -11,7 +11,12 @@ const countStudents = (path) => {
   var dict = {};
   for (let i = 1; i <= s.length; i++) {
     let g = s.split(',');
-    dict[g[g.length - 1]] += 1;
+    if (dict[g[g.length - 1]] === undefined) {
+      dict[g[g.length - 1]] = 1;
+    }
+    else {
+      dict[g[g.length - 1]] = dict[g[g.length - 1]] + 1;
+    }
   }
   } catch (err) {
   throw new Error('Cannot load the database');
