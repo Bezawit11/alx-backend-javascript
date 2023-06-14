@@ -2,12 +2,13 @@
  * displays message on the STDOUT.
  */
 const fs = require('fs');
-const countStudents = (path) => new Promise((resolve, reject) => {
+function countStudents(path) { return new Promise((resolve, reject) => {
   fs.readFile(path, 'utf-8', (err, data) => {
   if (err) {
     reject(new Error('Cannot load the database'));
+    return;
   }
-  let s = data.toString('utf-8').split('\n');
+  let s = data.split('\n');
   s.shift()
   s.pop()
   s = s.reverse()
@@ -29,7 +30,8 @@ const countStudents = (path) => new Promise((resolve, reject) => {
   for(var key in dict) {
    console.log('Number of students in ' + key + ": " + dict[key].length + '.' + ' List:' + dict[key]);
 }
-    resolve(true)
+    resolve(true);
 });
 });
+};
 module.exports = countStudents;
