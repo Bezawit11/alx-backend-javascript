@@ -26,7 +26,7 @@ const countStudents = (path) => {
     }
   }
   for(var key in dict) {
-   console.log('Number of students in ' + key + ": " + dict[key] + '.');
+   console.log('Number of students in ' + key + ": " + dict[key].length + '.' + 'List:' + dict[key] + '.');
 }
   } catch (err) {
   throw new Error('Cannot load the database');
