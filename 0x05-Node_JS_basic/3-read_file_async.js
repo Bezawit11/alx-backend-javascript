@@ -28,7 +28,7 @@ function countStudents(path) { return new Promise((resolve, reject) => {
     }
   }
   for(var key in dict) {
-   console.log('Number of students in ' + key + ": " + dict[key].length + '.' + ' List:' + dict[key].join(', '));
+   console.log('Number of students in ' + key + ": " + dict[key].length + '.' + ' List: ' + dict[key].join(', '));
 }
     resolve(true);
 });
