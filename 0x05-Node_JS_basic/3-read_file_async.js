@@ -27,5 +27,5 @@ const countStudents = (path) => {
    console.log('Number of students in ' + key + ": " + dict[key].length + '.' + ' List:' + dict[key]);
 }
 });
-});
+};
 module.exports = countStudents;
