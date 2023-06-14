@@ -1,13 +1,11 @@
 /**
  * displays message on the STDOUT.
  */
-var fs = require('fs');
-var path = process.cwd();
-const countStudents = (rpath) => {
+const fs = require('fs');
+const countStudents = (path) => {
   try {
-  fs.readFileSync(path + rpath, function(err, data) {
-  console.log(data);
-  });
+  const data =  fs.readFileSync(path, 'utf-8');
+  console.log('data', data);
   } catch (err) {
   throw new Error('Cannot load the database');
   }
