@@ -7,7 +7,7 @@ const countStudents = (path) => {
   fs.readFileSync(path, function(err, data) {
   console.log(data);
   });
-  } catch (err) {
+  } throw (err) {
   console.log('Cannot load the database');
   }
 };
