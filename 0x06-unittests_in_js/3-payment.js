@@ -1,4 +1,6 @@
-const calculateNumber = (a, b) => {
-  return Math.round(a) + Math.round(b);
+const  = require('./Utils');
+const sendPaymentRequestToApi = (totalAmount, totalShipping) => {
+  return Utils.calculateNumber('SUM', totalAmount, totalShipping);
 };
-module.exports = calculateNumber;
+
+module.exports = sendPaymentRequestToApi;
