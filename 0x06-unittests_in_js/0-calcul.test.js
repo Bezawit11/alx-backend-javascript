@@ -14,4 +14,7 @@ describe("Test calculateNumber function", () => {
   it("add two floating numbers", () => {
     assert.strictEqual(calculateNumber(1.5, 3.7), 6);
   });
+  it("add two floating numbers", () => {
+    assert.strictEqual(calculateNumber(1.49, 3.49), 4);
+  });
 });
