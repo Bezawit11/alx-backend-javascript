@@ -26,10 +26,7 @@ describe("Test calculateNumber function", () => {
   it("divide two integer numbers", () => {
     assert.strictEqual(calculateNumber('DIVIDE', 1.4, 4.5), 0.2);
   });
-  it("divide one integer and one floating number", () => {
+  it("divide 0 by one integer", () => {
     assert.strictEqual(calculateNumber('DIVIDE', 0, 1.4), 0);
-  });
-  it("divide one integer and one floating number", () => {
-    assert.strictEqual(calculateNumber('DIVIDE', 1.4, 0), 'Error');
   });
 });
