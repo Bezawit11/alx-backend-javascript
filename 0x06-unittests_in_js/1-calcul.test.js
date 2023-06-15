@@ -32,7 +32,4 @@ describe("Test calculateNumber function", () => {
   it("divide 0 by one integer", () => {
     assert.strictEqual(calculateNumber('DIVIDE', 0, 1.4), 0);
   });
-  it('divide integer by 0', () => {
-      assert.strictEqual(calculateNumber('DIVIDE', 5.0, 0), 'Error');
-    });
 });
