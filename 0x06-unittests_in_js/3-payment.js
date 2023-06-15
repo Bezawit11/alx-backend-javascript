@@ -1,6 +1,7 @@
 const  = require('./Utils');
 const sendPaymentRequestToApi = (totalAmount, totalShipping) => {
-  return Utils.calculateNumber('SUM', totalAmount, totalShipping);
+  const cost = Utils.calculateNumber('SUM', totalAmount, totalShipping);
+  console.log('The total is: ${cost}');
 };
 
 module.exports = sendPaymentRequestToApi;
