@@ -35,4 +35,10 @@ describe("Test calculateNumber function", () => {
   it("divide 0 by one integer", () => {
     assert.expect(calculateNumber('DIVIDE', 1.4, 4.5)).to.equal(0.2);
   });
+  it('positive number and number rounded up to 0', () => {
+      assert.expect(calculateNumber('DIVIDE', 5.0, -0.2)).to.equal('Error');
+  });
+  it('negative number and 0', () => {
+      assert.expect(calculateNumber('DIVIDE', -5.0, 0)).to.equal('Error');
+  });
 });
