@@ -6,15 +6,27 @@ describe("Test calculateNumber function", () => {
     assert.strictEqual(calculateNumber('SUM', 1, 3), 4);
   });
   it("add one integer and one floating number", () => {
-    assert.strictEqual(calculateNumber(1, 3.7), 5);
+    assert.strictEqual(calculateNumber('SUM', 1, 3.7), 5);
   });
   it("add two floating numbers", () => {
-    assert.strictEqual(calculateNumber(1.2, 3.7), 5);
+    assert.strictEqual(calculateNumber('SUM', 1.2, 3.7), 5);
   });
   it("add two floating numbers", () => {
-    assert.strictEqual(calculateNumber(1.5, 3.7), 6);
+    assert.strictEqual(calculateNumber('SUM', 1.5, 3.7), 6);
   });
   it("add two floating numbers", () => {
-    assert.strictEqual(calculateNumber(1.49, 3.49), 4);
+    assert.strictEqual(calculateNumber('SUM', 1.49, 3.49), 4);
+  });
+  it("subtract two integer numbers", () => {
+    assert.strictEqual(calculateNumber('SUBTRACT', 3, 1), 2);
+  });
+  it("subtract one integer and one floating number", () => {
+    assert.strictEqual(calculateNumber('SUBTRACT', 1.4, 4.5), -4);
+  });
+  it("divide two integer numbers", () => {
+    assert.strictEqual(calculateNumber('DIVIDE', 1.4, 4.5), 0.2);
+  });
+  it("divide one integer and one floating number", () => {
+    assert.strictEqual(calculateNumber('DIVIDE', 0, 1.4), 0);
   });
 });
