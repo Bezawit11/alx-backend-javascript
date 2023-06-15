@@ -20,6 +20,9 @@ describe("Test calculateNumber function", () => {
   it("subtract two integer numbers", () => {
     assert.strictEqual(calculateNumber('SUBTRACT', 3, 1), 2);
   });
+  it("subtract two floating numbers", () => {
+    assert.strictEqual(calculateNumber('SUBTRACT', 3.49, 1.49), 2);
+  });
   it("subtract one integer and one floating number", () => {
     assert.strictEqual(calculateNumber('SUBTRACT', 1.4, 4.5), -4);
   });
