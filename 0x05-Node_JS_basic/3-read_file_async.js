@@ -1,6 +1,7 @@
 /**
  * displays message on the STDOUT.
  */
+/* eslint-disable no-plusplus, guard-for-in, no-useless-concat*/
 const fs = require('fs');
 function countStudents(path) { return new Promise((resolve, reject) => {
   fs.readFile(path, 'utf-8', (err, data) => {
@@ -16,7 +17,7 @@ function countStudents(path) { return new Promise((resolve, reject) => {
   var dict = {};
   for (let i = 1; i <= s.length; i++) {
     let g = s[s.length - i].split(',');
-    var m = g[0];  // eslint-disable-line no-plusplus
+    var m = g[0];
     if (dict[g[g.length - 1]] === undefined) {
       var k = [m]
       dict[g[g.length - 1]] = k;
@@ -28,8 +29,8 @@ function countStudents(path) { return new Promise((resolve, reject) => {
     }
   }
   for(var key in dict) {
-   console.log('Number of students in ' + key + ": " + dict[key].length + '.' + ' List: ' + dict[key].join(', '));  // eslint-disable-line guard-for-in
-}  // eslint-disable-line no-useless-concat
+   console.log('Number of students in ' + key + ": " + dict[key].length + '.' + ' List: ' + dict[key].join(', '));
+}
     resolve(true);
 });
 });
