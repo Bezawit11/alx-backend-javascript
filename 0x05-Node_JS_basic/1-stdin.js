@@ -5,8 +5,6 @@ process.stdout.write('Welcome to Holberton School, what is your name?\n');
 process.stdin.on('readable', () => {
   const user_input = process.stdin.read();
   process.stdout.write(`Your name is: ${user_input}`);
-  process.exit();
-});
-process.stdin.on('end', () => {
   process.stdout.write('This important software is now closing\n');
+  process.exit();
 });
