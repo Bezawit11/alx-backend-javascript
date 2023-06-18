@@ -51,7 +51,7 @@ const requestListener = function (req, res) {
             res.end("This is the list of our students");
             countStudents("database.csv")
               .then((full_list) => {
-                res.write(full_list);
+                res.write(Buffer.from(full_list));
             })
             .catch((error) => {
             console.log(error);
