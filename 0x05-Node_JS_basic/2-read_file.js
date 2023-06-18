@@ -12,7 +12,7 @@ const countStudents = (path) => {
     s = s.reverse();
     console.log('Number of students:', s.length);
     const dict = {};
-    for (let i = 1; i <= s.length; i++) {
+    for (let i = 1; i <= s.length; i++) { // eslint-disable no-plusplus
       const g = s[s.length - i].split(',');
       const m = ` ${g[0]}`;
       if (dict[g[g.length - 1]] === undefined) {
@@ -24,8 +24,8 @@ const countStudents = (path) => {
         dict[g[g.length - 1]] = l;
       }
     }
-    for (const key in dict) {
-      console.log(`Number of students in ${key}: ${dict[key].length}.` + ` List:${dict[key]}`);
+    for (const key in dict) { // eslint-disable guard-for-in
+      console.log(`Number of students in ${key}: ${dict[key].length}.` + ` List:${dict[key]}`); // eslint-disable no-useless-concat
     }
   } catch (err) {
     throw new Error('Cannot load the database');
