@@ -50,12 +50,13 @@ const requestListener = function (req, res) {
         case "/students":
             //res.end("This is the list of our students");
             countStudents("database.csv")
-              .then(full_list => {
-                res.write(Buffer.from(full_list));
+            .then((out) => {
+              res.write("This is the list of our students");
+              res.write(out)
             })
             .catch((error) => {
             console.log(error);
-    });
+            });
             break
     }
 }
