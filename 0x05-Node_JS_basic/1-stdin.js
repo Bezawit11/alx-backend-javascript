@@ -1,7 +1,7 @@
 /**
  *takes input from user on console
  */
-
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
 process.stdin.on('readable', () => {
   const chunk = process.stdin.read();
 
