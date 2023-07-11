@@ -1,68 +1,32 @@
-/**
- *creating a server object
- * */
-/**
- *creating a server object
- * */
 const http = require('http');
-const fs = require('fs');
-const host = 'localhost';
+
+const args = process.argv.slice(2);
+const countStudents = require('./3-read_file_async');
+const DATABASE = args[0];
+const hostname = '127.0.0.1';
 const port = 1245;
 
-function countStudents(path) {
-  return new Promise((resolve, reject) => {
-    fs.readFile(path, 'utf-8', (err, data) => {
-      if (err) {
-        reject(Error('Cannot load the database'));
-        return;
-      }
-      let s = data.split('\n');
-      s.shift();
-      s.pop();
-      s = s.reverse();
-      console.log('Number of students:', s.length);
-      const dict = {};
-      for (let i = 1; i <= s.length; i++) {
-        const g = s[s.length - i].split(',');
-        const m = g[0];
-        if (dict[g[g.length - 1]] === undefined) {
-          const k = [m];
-          dict[g[g.length - 1]] = k;
-        } else {
-          const l = dict[g[g.length - 1]];
-          l.push(m);
-          dict[g[g.length - 1]] = l;
-        }
-      }
-      for (const key in dict) {
-        console.log(`Number of students in ${key}: ${dict[key].length}.` + ` List: ${dict[key].join(', ')}`);
-      }
-      resolve(true);
-    });
-  });
-}
-const requestListener = function (req, res) {
-    res.setHeader("Content-Type", "application/json");
-    switch (req.url) {
-        case "/":
-            res.end("Hello Holberton School!");
-            break
-        case "/students":
-            //res.end("This is the list of our students");
-            countStudents("database.csv")
-            .then((out) => {
-              res.write("This is the list of our students");
-              res.write(out)
-            })
-            .catch((error) => {
-            console.log(error);
-            });
-            break
+const app = http.createServer(async (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  const { url } = req;
+  if (url === '/') {
+    res.write('Hello Holberton School!');
+  } else if (url === '/students') {
+    res.write('This is the list of our students\n');
+    try {
+      const students = await countStudents(DATABASE);
+      res.end(`${students.join('\n')}`);
+    } catch (error) {
+      res.end(error.message);
     }
-}
+  }
+  res.statusCode = 404;
+  res.end();
+});
 
-const app = http.createServer(requestListener);
-app.listen(port, host, () => {
+app.listen(port, hostname, () => {
+  //   console.log(`Server is running at http://${hostname}:${port}/`);
 });
 
 module.exports = app;
