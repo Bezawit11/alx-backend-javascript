@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
   res.send('Hello Holberton School!');
 });
 
-app.get('/students', (req, res) => {
+app.get('/students', async (req, res) => {
    res.write('This is the list of our students\n');
     try {
       const students = await countStudents(DATABASE); // eslint-disable-line
