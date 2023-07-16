@@ -1,30 +1,35 @@
-import sha1 from 'sha1';
-import Queue from 'bull/lib/queue';
-import dbClient from '../utils/db'; // eslint-disable-line import/no-named-as-default
+const { expect } = require('chai');
 
-module.exports = {
-  async postNew(req, res) {
-    const userQueue = new Queue('userQueue');
-    const { email, password } = req.body;
-    if (!email) {
-      return res.status(400).send({ error: 'Missing email' });
-    }
-    if (!password) {
-      return res.status(400).send({ error: 'Missing password' });
-    }
-    const a = await dbClient.users1.findOne({ email });
-    if (a) {
-      return res.status(400).send({ error: 'Already exist' });
-    }
-    const r = await dbClient.users1
-      .insertOne({ email, password: sha1(password) });
-    const user = {
-      id: r.insertedId,
-      email,
-    };
-    await userQueue.add({
-      userId: r.insertedId.toString(),
-    });
-    return res.status(201).send(user);
-  },
-};
+describe('Testing numbers', () => {
+  it('1 is equal to 1', () => {
+    expect(1 === 1).to.be.true;
+  });
+
+  it('2 is equal to 2', () => {
+    expect(2 === 2).to.be.true;
+  });
+
+  it.skip('1 is equal to 3', () => {
+    expect(1 === 3).to.be.true;
+  });
+
+  it('3 is equal to 3', () => {
+    expect(3 === 3).to.be.true;
+  });
+
+  it('4 is equal to 4', () => {
+    expect(4 === 4).to.be.true;
+  });
+
+  it('5 is equal to 5', () => {
+    expect(5 === 5).to.be.true;
+  });
+
+  it('6 is equal to 6', () => {
+    expect(6 === 6).to.be.true;
+  });
+
+  it('7 is equal to 7', () => {
+    expect(7 === 7).to.be.true;
+  });
+});
